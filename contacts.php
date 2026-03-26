@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакти - Птахи Люблинця</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .donate-button {
+          display: inline-block;
+          background-color: #6b8e23;
+          color: #fff;
+          padding: 10px 20px;
+          border-radius: 6px;
+          text-decoration: none;
+          font-weight: bold;
+          transition: background-color 0.3s;
+        }
+        .donate-button:hover {
+          background-color: #556b2f;
+        }
+      </style>
+</head>
+<body>
+<header>
+        <div class="container">
+          <body id="top">
+            <div class="logo">
+                <a href="index.html"><img src="Images/шеврон-removebg-preview.png" alt="Птахи Люблинця"> </a>
+                <a href="index.html"><h1>Птахи Люблинця</h1></a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Новини</a></li>
+                    <li><a href="about.html">Про нас</a></li>
+                    <li><a href="merch.html">Мерч</a></li>
+                    <li><a href="contacts.php">Контакти</a></li>
+                </ul>
+                <ul class="social-links">
+                    <li><a href="https://www.facebook.com/profile.php?id=61558131549424" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://www.instagram.com/ptah_lub?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://t.me/ptahu_lub" target="_blank"><i class="fab fa-telegram-plane"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+    <div class="qr-banner-wide">
+      <img src="Images/ptahilublinca.png" alt="QR код на LinkTree">
+      <div class="qr-text">
+        <h3>Підтримай Птахів Люблинця</h3>
+        <p>Скануй QR-код або перейди за посиланням, щоб доєднатися до нашої спільноти.</p>
+        <a href="https://linktr.ee/ptahilublinca" target="_blank" class="donate-button">Доєднатися</a>
+      </div>
+    </div>  
+        <section class="contacts-hero">
+            <h2>Зв'яжіться з нами</h2>
+            <p>Маєте питання чи пропозиції? Напишіть нам або зателефонуйте!</p>
+        </section>
+
+        <div class="contacts-container">
+            <section class="contact-info">
+                <p>Ви можете залишити своє звернення або оформити замовлення, скориставшись зручною формою зворотного зв'язку, 
+                розміщеною на нашому сайті. Просто заповніть необхідні поля, і ми обовʼязково зв’яжемося з вами найближчим часом. <br>
+                Також ви можете звернутися до нас напряму, скориставшись контактними даними, вказаними нижче. Ми завжди відкриті до співпраці та з радістю відповімо на всі ваші запитання.</p>
+
+                <h3><i class="fas fa-phone"></i> Телефон</h3>
+                <P>+38 (096) 697-93-28</P>
+                <h3><i class="fas fa-envelope"></i> Електронна пошта</h3>
+                <p>ptahilublinca@gmail.com</p>
+
+
+            </section>
+
+            <section class="contact-form">
+                <h3>Форма зворотного зв'язку</h3>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Ваше ім'я</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Електронна пошта</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Ваше повідомлення</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Надіслати</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+ <footer style="background-color: #1a1a1a; color: white; padding: 20px 0; text-align: center;">
+      <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; align-items: flex-start; font-size: 14px;">
+    
+        <div style="flex: 1; min-width: 180px;">
+          <h4>Контакти</h4>
+          <p>Email: ptahilublinca@gmail.com</p>
+          <p>Телефон: +38 (096) 697-93-28</p>
+          <p>Олександр</p>
+        </div>
+    
+        <div style="flex: 1; min-width: 150px;">
+          <h4>Навігація</h4>
+          <ul style="list-style: none; padding: 0;">
+            <li><a href="index.html" style="color: white;">Новини</a></li>
+            <li><a href="about.html" style="color: white;">Про нас</a></li>
+            <li><a href="merch.html" style="color: white;">Мерч</a></li>
+            <li><a href="contacts.php" style="color: white;">Контакти</a></li>
+          </ul>
+        </div>
+    
+        <div style="flex: 1; min-width: 150px;">
+          <h4>Соцмережі</h4>
+          <div style="font-size: 18px;">
+            <a href="https://www.facebook.com/profile.php?id=61558131549424" target="_blank" style="color: white; margin-right: 8px;"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/ptah_lub?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" style="color: white; margin-right: 8px;"><i class="fab fa-instagram"></i></a>
+            <a href="https://t.me/ptahu_lub" target="_blank" style="color: white;"><i class="fab fa-telegram-plane"></i></a>
+          </div>
+        </div>
+    
+        <div style="flex: 1; min-width: 150px;">
+          <h4>Підтримати</h4>
+          <a href="https://send.monobank.ua/jar/6HAFGo7Q5H" target="_blank" class="donate-button" style="font-size: 14px;">Монобанка</a>
+        </div>
+        
+        <div style="flex: 1; min-width: 150px; text-align: right; align-self: center;">
+          <a href="#top" style="color: #6b8e23; font-weight: bold; text-decoration: underline;">↑ На початок</a>
+        </div>
+      </div>
+
+    </footer>
+</body>
+</html>
+<?php
+$host = 'localhost';
+$dbname = 'ptahy_lublincya';
+$username = 'root'; // Логін за замовчуванням у XAMPP
+$password = ''; // Пароль за замовчуванням порожній
+
+try {
+  $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}
+catch (PDOException $e) {
+  die("Помилка підключення: " . $e->getMessage());
+}
+
+// Обробка форми
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $stmt = $pdo->prepare("INSERT INTO contacts (name, email, phone, message) 
+                          VALUES (:name, :email, :phone, :message)");
+  $stmt->execute([
+    ':name' => $_POST['name'],
+    ':email' => $_POST['email'],
+    ':phone' => $_POST['phone'],
+    ':message' => $_POST['message']
+  ]);
+  echo "<div class='success'>Повідомлення успішно відправлено!</div>";
+}
+?>

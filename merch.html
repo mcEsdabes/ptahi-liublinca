@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мерч - Птахи Люблинця</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    .donate-button {
+      display: inline-block;
+      background-color: #6b8e23;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .donate-button:hover {
+      background-color: #556b2f;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="logo">
+        <a href="index.html"><img src="Images/шеврон-removebg-preview.png" alt="Птахи Люблинця"></a>
+        <a href="index.html"><h1>Птахи Люблинця</h1></a>
+      </div>
+      <button class="burger" id="burger" aria-label="Меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="main-nav">
+        <ul class="nav-links">
+          <li><a href="index.html">Новини</a></li>
+          <li><a href="about.html">Про нас</a></li>
+          <li><a href="merch.html" class="active">Мерч</a></li>
+          <li><a href="contacts.php">Контакти</a></li>
+        </ul>
+        <ul class="social-links">
+          <li><a href="https://www.facebook.com/profile.php?id=61558131549424" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="https://www.instagram.com/ptah_lub?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="https://t.me/ptahu_lub" target="_blank"><i class="fab fa-telegram-plane"></i></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="merch-hero">
+      <h2>Придбати наш мерч і допомогти розвитку організації!</h2>
+      <p>Всі кошти йдуть на виготовлення дронів для ЗСУ</p>
+    </section>
+
+    <div class="qr-banner-wide">
+      <img src="Images/ptahilublinca.png" alt="QR код на LinkTree">
+      <div class="qr-text">
+        <h3>Підтримай Птахів Люблинця</h3>
+        <p>Скануй QR-код або перейди за посиланням, щоб доєднатися до нашої спільноти.</p>
+        <a href="https://linktr.ee/ptahilublinca" target="_blank" class="donate-button">Доєднатися</a>
+      </div>
+    </div>
+
+    <div class="merch-grid">
+      <div class="merch-item">
+        <div class="merch-category">Керамічна кружка</div>
+        <img src="Images/Керамічна.jpg" alt="Керамічна кружка">
+        <div class="merch-content">
+          <h3>Керамічна кружка</h3>
+          <p>Стильна та зручна кружка з фірмовим принтом волонтерської організації «Птахи Люблинця».</p>
+          <p>Обʼєм: 330 мл<br>Матеріал: біла кераміка<br>Друк: повноколірний, довговічний</p>
+          <div class="price">300 грн</div>
+          <a href="contacts.php" class="buy-btn">Купити</a>
+        </div>
+      </div>
+
+      <div class="merch-item">
+        <div class="merch-category">Термокружка</div>
+        <img src="Images/Термокружка.jpg" alt="Термокружка">
+        <div class="merch-content">
+          <h3>Термокружка</h3>
+          <p>Стильна термокружка з логотипом "Птахів Люблинця". Ідеально підходить для подорожей, роботи та
+            волонтерських поїздок.</p>
+          <p>Обʼєм: 300 мл<br>Матеріал: нержавіюча сталь<br>Колір: металічний</p>
+          <div class="price">500 грн</div>
+          <a href="contacts.php" class="buy-btn">Купити</a>
+        </div>
+      </div>
+
+      <div class="merch-item">
+        <div class="merch-category">Шеврон</div>
+        <img src="Images/Шеврон.jpg" alt="Шеврон">
+        <div class="merch-content">
+          <h3>Шеврон</h3>
+          <p>Шеврон з логотипом «Птахи Люблинця», ідеально підходить для рюкзака чи військової форми.</p>
+          <p>Матеріал: тканина з липучкою<br>Розмір: 8×8 см</p>
+          <div class="price">150 грн</div>
+          <a href="contacts.php" class="buy-btn">Купити</a>
+        </div>
+
+      </div>
+      <div class="merch-item">
+        <div class="merch-category">Магніти</div>
+        <img src="Images/Магніти.jpg" alt="Магніти">
+        <div class="merch-content">
+          <h3>Магніти</h3>
+          <p>Яскраві магніти з патріотичним дизайном. Ідеально прикрасять холодильник або подарунок.</p>
+          <p>Розмір: 7x7 см<br>Матеріал: гнучкий магнітний вініл</p>
+          <div class="price">100 грн</div>
+          <a href="contacts.php" class="buy-btn">Купити</a>
+        </div>
+      </div>
+
+      <div class="merch-item">
+        <div class="merch-category">Стяг</div>
+        <img src="Images/Стяг.jpg" alt="Стяг">
+        <div class="merch-content">
+          <h3>Стяг із принтом</h3>
+          <p>Прапор із символікою «Птахів Люблинця» — яскравий знак підтримки та гордості за нашу спільну справу.</p>
+          <p>Розмір: 90x135 см<br>Матеріал: атлас</p>
+          <div class="price">1000 грн</div>
+          <a href="contacts.php" class="buy-btn">Купити</a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer style="background-color: #1a1a1a; color: white; padding: 20px 0; text-align: center;">
+    <div class="container"
+      style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; align-items: flex-start; font-size: 14px;">
+
+      <div style="flex: 1; min-width: 180px;">
+        <h4>Контакти</h4>
+        <p>Email: ptahilublinca@gmail.com</p>
+        <p>Телефон: +38 (096) 697-93-28</p>
+        <p>Олександр</p>
+      </div>
+
+      <div style="flex: 1; min-width: 150px;">
+        <h4>Навігація</h4>
+        <ul style="list-style: none; padding: 0;">
+          <li><a href="index.html" style="color: white;">Новини</a></li>
+          <li><a href="about.html" style="color: white;">Про нас</a></li>
+          <li><a href="merch.html" style="color: white;">Мерч</a></li>
+          <li><a href="contacts.php" style="color: white;">Контакти</a></li>
+        </ul>
+      </div>
+
+      <div style="flex: 1; min-width: 150px;">
+        <h4>Соцмережі</h4>
+        <div style="font-size: 18px;">
+          <a href="https://www.facebook.com/profile.php?id=61558131549424" target="_blank"
+            style="color: white; margin-right: 8px;"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/ptah_lub?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            target="_blank" style="color: white; margin-right: 8px;"><i class="fab fa-instagram"></i></a>
+          <a href="https://t.me/ptahu_lub" target="_blank" style="color: white;"><i
+              class="fab fa-telegram-plane"></i></a>
+        </div>
+      </div>
+
+      <div style="flex: 1; min-width: 150px;">
+        <h4>Підтримати</h4>
+        <a href="https://send.monobank.ua/jar/6HAFGo7Q5H" target="_blank" class="donate-button"
+          style="font-size: 14px;">Монобанка</a>
+      </div>
+
+      <div style="flex: 1; min-width: 150px; text-align: right; align-self: center;">
+        <a href="#top" style="color: #6b8e23; font-weight: bold; text-decoration: underline;">↑ На початок</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- QR FAB + Bottom Sheet (мобільні пристрої) -->
+  <button class="qr-fab" id="qr-fab" aria-label="Підтримати — QR-код">
+    <i class="fas fa-qrcode"></i>
+  </button>
+
+  <div class="qr-overlay" id="qr-overlay"></div>
+
+  <div class="qr-sheet" id="qr-sheet">
+    <div class="qr-sheet__handle"></div>
+    <button class="qr-sheet__close" id="qr-close" aria-label="Закрити">&#215;</button>
+    <img src="Images/ptahilublinca.png" alt="QR-код Птахи Люблинця">
+    <h3>Підтримай Птахів Люблинця</h3>
+    <p>Скануй QR-код або перейди за посиланням, щоб доєднатися до нашої спільноти.</p>
+    <a href="https://linktr.ee/ptahilublinca" target="_blank" class="donate-button">Доєднатися</a>
+  </div>
+
+</body>
+
+<script>
+  // Sticky header
+  const header = document.querySelector('header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 50);
+  });
+  // Бургер-меню
+  const burger = document.getElementById('burger');
+  const nav = document.getElementById('main-nav');
+  burger.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    burger.classList.toggle('open', isOpen);
+    burger.setAttribute('aria-expanded', isOpen);
+  });
+  document.addEventListener('click', (e) => {
+    if (!header.contains(e.target)) {
+      nav.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', false);
+    }
+  });
+
+  // QR Bottom Sheet
+  const qrFab     = document.getElementById('qr-fab');
+  const qrOverlay = document.getElementById('qr-overlay');
+  const qrSheet   = document.getElementById('qr-sheet');
+  const qrClose   = document.getElementById('qr-close');
+
+  function openQR() {
+    qrOverlay.classList.add('open');
+    qrSheet.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeQR() {
+    qrOverlay.classList.remove('open');
+    qrSheet.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  qrFab.addEventListener('click', openQR);
+  qrClose.addEventListener('click', closeQR);
+  qrOverlay.addEventListener('click', closeQR);
+</script>
+</html>

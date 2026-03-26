@@ -1,0 +1,1417 @@
+/* ============================================================
+   CSS Variables (Design Tokens)
+   ============================================================ */
+:root {
+    --color-primary: #6b8e23;
+    --color-dark: #556b2f;
+    --color-light-bg: #f0f4e3;
+    --color-white: #ffffff;
+    --color-text: #333333;
+    --color-text-muted: #555555;
+    --color-border: #dddddd;
+    --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.15);
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --transition: 0.3s ease-in-out;
+}
+
+/* ============================================================
+   Reset & Base
+   ============================================================ */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    color: var(--color-text);
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+main {
+    flex: 1 0 auto;
+    padding: 20px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* ============================================================
+   Header & Navigation
+   ============================================================ */
+header {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition);
+}
+
+header.scrolled {
+    padding: 10px 0;
+    background-color: var(--color-dark);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    transition: transform var(--transition);
+}
+
+.logo:hover img {
+    transform: scale(1.1);
+}
+
+.logo h1 {
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+/* Посилання у логотипі — без стандартного вигляду браузера */
+.logo a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.logo a:hover h1 {
+    color: #cddc39;
+    transition: color var(--transition);
+}
+
+/* Nav */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links,
+.social-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    margin-right: 30px;
+    flex-wrap: wrap;
+}
+
+.nav-links li,
+.social-links li {
+    margin-left: 20px;
+}
+
+.nav-links a,
+.social-links a {
+    color: var(--color-white);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition);
+}
+
+.nav-links a:hover {
+    color: #cddc39;
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+.social-links a {
+    font-size: 1.2rem;
+}
+
+.social-links a:hover {
+    color: #cddc39;
+    transform: scale(1.1);
+}
+
+/* Burger Menu */
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    z-index: 200;
+}
+
+.burger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-white);
+    border-radius: 3px;
+    transition: all var(--transition);
+}
+
+.burger.open span:nth-child(1) {
+    transform: translateY(8.5px) rotate(45deg);
+}
+
+.burger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.open span:nth-child(3) {
+    transform: translateY(-8.5px) rotate(-45deg);
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+footer {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    flex-shrink: 0;
+}
+
+/* ============================================================
+   Sections (shared blocks)
+   ============================================================ */
+.section-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 25px 30px;
+    border-radius: var(--radius-lg);
+    background-color: var(--color-white);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-in-out;
+    flex-wrap: wrap;
+}
+
+.section-block.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-block.alternate-bg {
+    background-color: var(--color-light-bg);
+}
+
+.section-block img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+}
+
+.section-block p {
+    flex: 1;
+    margin-top: 0;
+}
+
+/* Video wrapper (16:9)
+   position:relative обов'язковий на ВСІХ .video-wrapper,
+   щоб вкладений iframe з position:absolute відображався коректно */
+.video-wrapper {
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto 0;
+    padding-bottom: 56.25%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* Розширення для відео всередині section-block */
+.section-block .video-wrapper {
+    flex: 1 1 100%;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.video-wrapper:hover iframe {
+    transform: scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Анімація фотографій при наведенні (section-block, text-block) */
+.section-block img,
+.text-block img {
+    transition: transform var(--transition), opacity var(--transition);
+}
+
+.section-block img:hover,
+.text-block img:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+/* Головне фото на головній сторінці */
+.hero-img {
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out,
+                box-shadow 0.4s ease-in-out;
+}
+
+.hero-img:hover {
+    transform: scale(1.03);
+    opacity: 0.93;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================================================
+   Hero blocks
+   ============================================================ */
+.hero-common,
+.contacts-hero {
+    text-align: justify;
+    margin: 40px 0;
+}
+
+.hero-common h2,
+.contacts-hero h2 {
+    font-size: 2rem;
+    color: var(--color-dark);
+    margin-bottom: 10px;
+    transition: all 0.4s ease;
+}
+
+.contacts-hero:hover h2 {
+    transform: scale(1.02);
+    text-shadow: 1px 1px 3px rgba(85, 107, 47, 0.3);
+}
+
+.hero-common p,
+.contacts-hero p {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    font-weight: 500;
+    transition: all 0.4s ease;
+}
+
+.contacts-hero:hover p {
+    letter-spacing: 0.5px;
+    color: var(--color-dark);
+}
+
+/* ============================================================
+   Merch Hero
+   ============================================================ */
+.merch-hero {
+    text-align: center;
+    margin: 40px 0;
+    padding: 0 20px;
+}
+
+.merch-hero h2 {
+    font-size: 2.2rem;
+    color: var(--color-dark);
+    margin-bottom: 15px;
+    transition: all 0.4s ease;
+    display: inline-block;
+}
+
+.merch-hero:hover h2 {
+    color: var(--color-primary);
+    transform: translateY(-3px);
+    text-shadow: 0 2px 8px rgba(107, 142, 35, 0.3);
+}
+
+.merch-hero p {
+    font-size: 1.3rem;
+    color: var(--color-primary);
+    font-weight: 500;
+    max-width: 800px;
+    margin: 0 auto;
+    transition: all 0.4s ease 0.1s;
+}
+
+.merch-hero:hover p {
+    color: var(--color-dark);
+    letter-spacing: 0.5px;
+}
+
+/* ============================================================
+   Merch Grid & Items
+   ============================================================ */
+.merch-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 0 20px;
+    margin: 40px auto;
+    max-width: 1400px;
+}
+
+.merch-item {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all var(--transition);
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    max-width: 100%;
+}
+
+.merch-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.merch-category {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    padding: 12px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.merch-item img {
+    width: 90%;
+    height: 250px;
+    object-fit: cover;
+    padding: 20px;
+    border-radius: 25px;
+    transition: all 0.4s ease;
+    margin: 0 auto;
+    display: block;
+}
+
+.merch-item:hover img {
+    transform: scale(1.03);
+    border-radius: 15px;
+}
+
+.merch-content {
+    padding: 0 20px 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.merch-item h3 {
+    color: var(--color-dark);
+    margin: 15px 0 10px;
+    font-size: 1.4rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.merch-item h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-primary);
+}
+
+.merch-item p {
+    color: var(--color-text-muted);
+    margin: 10px 0 15px;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    flex-grow: 1;
+}
+
+.merch-item .price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--color-primary);
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* ============================================================
+   Buttons
+   ============================================================ */
+.submit-btn,
+.buy-btn,
+.more-button {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all var(--transition);
+    text-decoration: none;
+    text-align: center;
+}
+
+.submit-btn:hover,
+.buy-btn:hover,
+.more-button:hover {
+    background-color: var(--color-dark);
+}
+
+.buy-btn {
+    display: block;
+    width: 80%;
+    margin: 15px auto 20px;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.buy-btn:hover {
+    background-color: var(--color-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(85, 107, 47, 0.3);
+}
+
+.more-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(107, 142, 35, 0.3);
+}
+
+.more-button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 15px rgba(107, 142, 35, 0.4);
+}
+
+.support-button {
+    text-align: right;
+}
+
+.right-button {
+    float: right;
+}
+
+/* ============================================================
+   Contacts page
+   ============================================================ */
+.contacts-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin: 40px 0;
+}
+
+.contact-info,
+.contact-form {
+    background: var(--color-white);
+    padding: 30px;
+    border-radius: var(--radius-md);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h3 {
+    color: var(--color-dark);
+    margin: 25px 0 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-info h3:first-child {
+    margin-top: 0;
+}
+
+.contact-info h3 i {
+    color: var(--color-primary);
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+    padding-left: 30px;
+}
+
+.social-section {
+    margin-top: 40px;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+    padding-left: 30px;
+    flex-wrap: wrap;
+}
+
+.social-button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    font-size: 1.2rem;
+    transition: transform var(--transition);
+}
+
+.social-button:hover {
+    transform: translateY(-3px);
+}
+
+.fb,
+.inst,
+.tg {
+    background-color: var(--color-primary);
+}
+
+.contact-form h3 {
+    color: var(--color-dark);
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--color-dark);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    transition: border-color var(--transition);
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--color-primary);
+    outline: none;
+}
+
+/* Contacts grid */
+.contacts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.contacts-item {
+    background: var(--color-white);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.contacts-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.contacts-category {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    padding: 10px;
+    font-weight: bold;
+    transition: all var(--transition);
+}
+
+.contacts-item:hover .contacts-category {
+    background-color: var(--color-primary);
+    letter-spacing: 1px;
+}
+
+.contacts-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    padding: 20px;
+    transition: transform 0.4s ease, padding var(--transition);
+}
+
+.contacts-item:hover img {
+    transform: scale(0.98);
+    padding: 15px;
+}
+
+.contacts-item h3 {
+    color: var(--color-dark);
+    margin: 10px 0;
+    padding: 0 20px;
+    font-size: 1.3rem;
+    transition: all var(--transition);
+    position: relative;
+}
+
+.contacts-item:hover h3 {
+    color: #3a4a1f;
+    transform: scale(1.02);
+}
+
+.contacts-item h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 50px;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: transform var(--transition);
+}
+
+.contacts-item:hover h3::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+/* ============================================================
+   About page
+   ============================================================ */
+.about-section {
+    margin-bottom: 50px;
+}
+
+.about-content {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.about-image {
+    width: 50%;
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease-in-out;
+}
+
+.about-image:hover {
+    transform: scale(1.03) rotate(1deg);
+    box-shadow: var(--shadow-lg);
+    filter: brightness(1.05) contrast(1.05);
+}
+
+.about-text {
+    width: 50%;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+}
+
+/* Team */
+.team-section {
+    margin: 60px 0;
+}
+
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.team-member {
+    flex: 0 1 250px;
+    max-width: 300px;
+    background: var(--color-white);
+    padding: 25px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    transition: all var(--transition);
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.team-member img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--color-primary);
+    transform: scale(0.95);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.team-member:hover img {
+    transform: scale(1.05) translateY(-5px);
+    border-color: #a2c523;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.team-member h3 {
+    color: var(--color-dark);
+    margin-bottom: 5px;
+}
+
+.position {
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.bio {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Achievements */
+.achievements {
+    margin: 60px 0;
+}
+
+.achievements-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.achievement-item {
+    background: var(--color-white);
+    padding: 30px 20px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    transition: transform var(--transition);
+}
+
+.achievement-item:hover {
+    transform: translateY(-5px);
+}
+
+.achievement-item i {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+}
+
+.achievement-item p {
+    font-weight: 600;
+    color: var(--color-dark);
+}
+
+/* ============================================================
+   Text & Image blocks (shared animations)
+   ============================================================ */
+.text-block {
+    transition: transform var(--transition), opacity var(--transition);
+}
+
+.text-block:hover,
+.text-block:hover p,
+.text-block:hover h3 {
+    transform: translateY(-5px);
+}
+
+.support-block {
+    transition: all 0.4s ease;
+}
+
+.support-block:hover {
+    background-color: #f0f4e8 !important;
+}
+
+.support-text {
+    transition: all 0.4s ease;
+}
+
+.support-block:hover .support-text {
+    transform: translateX(10px);
+}
+
+/* ============================================================
+   QR Banner (slide-in from right)
+   ============================================================ */
+.qr-banner-wide {
+    position: fixed;
+    top: 275px;
+    right: -260px;
+    width: 300px;
+    height: auto;
+    background-color: var(--color-light-bg);
+    border-left: 4px solid var(--color-primary);
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border-radius: 12px 0 0 12px;
+    transition: right var(--transition);
+}
+
+.qr-banner-wide:hover {
+    right: 0;
+}
+
+.qr-banner-wide::before {
+    content: "QR";
+    position: absolute;
+    left: -44px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 60px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 12px 0 0 12px;
+    cursor: pointer;
+}
+
+.qr-banner-wide img {
+    width: 80%;
+    height: auto;
+    border-radius: var(--radius-md);
+    transition: opacity var(--transition);
+}
+
+.qr-banner-wide .qr-text {
+    text-align: center;
+}
+
+.qr-banner-wide h3 {
+    font-size: 18px;
+    margin: 10px 0 5px;
+}
+
+.qr-banner-wide p {
+    font-size: 14px;
+    margin: 0 0 10px;
+}
+
+.qr-banner-wide .donate-button {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 10px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color var(--transition);
+}
+
+.qr-banner-wide .donate-button:hover {
+    background-color: var(--color-dark);
+}
+
+/* ============================================================
+   Donate fixed button
+   ============================================================ */
+.donate-fixed {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    background-color: var(--color-primary);
+    padding: 10px 20px;
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.donate-fixed a {
+    color: var(--color-white);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.donate-fixed a:hover {
+    opacity: 0.85;
+}
+
+/* ============================================================
+   Mobile QR FAB + Bottom Sheet
+   ============================================================ */
+
+/* Плаваюча кнопка (видима лише на мобільних) */
+.qr-fab {
+    display: none; /* Показуємо тільки в media query */
+    position: fixed;
+    bottom: 24px;
+    right: 20px;
+    z-index: 1100;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(107, 142, 35, 0.5);
+    font-size: 1.4rem;
+    align-items: center;
+    justify-content: center;
+    transition: transform var(--transition), background-color var(--transition);
+}
+
+.qr-fab:hover,
+.qr-fab:active {
+    background-color: var(--color-dark);
+    transform: scale(1.1);
+}
+
+/* Затемнення фону */
+.qr-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1200;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.qr-overlay.open {
+    display: block;
+    opacity: 1;
+}
+
+/* Bottom Sheet */
+.qr-sheet {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1300;
+    background: var(--color-white);
+    border-radius: 20px 20px 0 0;
+    padding: 24px 20px 36px;
+    box-shadow: 0 -6px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(100%);
+    transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+    text-align: center;
+}
+
+.qr-sheet.open {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    transform: translateY(0);
+}
+
+/* Ручка-індикатор зверху */
+.qr-sheet__handle {
+    width: 36px;
+    height: 4px;
+    background: #ddd;
+    border-radius: 2px;
+    margin-bottom: 4px;
+}
+
+/* Кнопка закрити */
+.qr-sheet__close {
+    position: absolute;
+    top: 16px;
+    right: 18px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #888;
+    cursor: pointer;
+    line-height: 1;
+    padding: 4px;
+}
+
+.qr-sheet__close:hover {
+    color: var(--color-dark);
+}
+
+.qr-sheet img {
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+    border-radius: var(--radius-md);
+    border: 2px solid var(--color-light-bg);
+}
+
+.qr-sheet h3 {
+    font-size: 1.1rem;
+    color: var(--color-dark);
+    margin: 0;
+}
+
+.qr-sheet p {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0;
+    padding: 0 10px;
+}
+
+.qr-sheet .donate-button {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 12px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color var(--transition);
+    margin-top: 4px;
+}
+
+.qr-sheet .donate-button:hover {
+    background-color: var(--color-dark);
+}
+
+/* ============================================================
+   RESPONSIVE — Tablet (max 768px)
+   ============================================================ */
+@media (max-width: 768px) {
+
+    /* Показуємо FAB-кнопку */
+    .qr-fab {
+        display: flex;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--color-dark);
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        gap: 15px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    nav.open {
+        display: flex;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        margin-right: 0;
+    }
+
+    .nav-links li,
+    .social-links li {
+        margin-left: 0;
+    }
+
+    .social-links {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    header .container {
+        padding: 0 15px;
+        position: relative;
+    }
+
+    .logo h1 {
+        font-size: 1.4rem;
+    }
+
+    .logo img {
+        height: 42px;
+    }
+
+    /* Section blocks */
+    .section-block {
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .section-block p {
+        font-size: 1rem;
+    }
+
+    /* Hero */
+    .hero-common h2,
+    .contacts-hero h2,
+    .merch-hero h2 {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .hero-common p,
+    .contacts-hero p,
+    .merch-hero p {
+        font-size: 1.05rem;
+        text-align: center;
+    }
+
+    /* Contacts */
+    .contacts-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 22px;
+    }
+
+    .contact-form h3 {
+        font-size: 1.35rem;
+    }
+
+    .contact-info p {
+        padding-left: 15px;
+    }
+
+    .social-buttons {
+        padding-left: 0;
+        gap: 12px;
+    }
+
+    /* About */
+    .about-content {
+        flex-direction: column;
+    }
+
+    .about-image,
+    .about-text {
+        width: 100%;
+    }
+
+    /* Team / Achievements */
+    .team-grid,
+    .achievements-list {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Merch */
+    .merch-item {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    /* QR Banner — hide on tablet/mobile to avoid overlap */
+    .qr-banner-wide {
+        display: none;
+    }
+}
+
+/* ============================================================
+   RESPONSIVE — Mobile (max 480px)
+   ============================================================ */
+@media (max-width: 480px) {
+    body {
+        font-size: 15px;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    header {
+        padding: 10px 0;
+    }
+
+    .logo img {
+        height: 36px;
+    }
+
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+
+    /* Section blocks */
+    .section-block {
+        padding: 15px;
+        margin: 15px auto;
+        gap: 10px;
+    }
+
+    .section-block p {
+        font-size: 0.95rem;
+    }
+
+    .section-block img {
+        border-radius: 6px;
+    }
+
+    /* Hero */
+    .hero-common h2,
+    .contacts-hero h2,
+    .merch-hero h2 {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+    }
+
+    .hero-common p,
+    .contacts-hero p,
+    .merch-hero p {
+        font-size: 1rem;
+    }
+
+    /* Contacts */
+    .contact-info,
+    .contact-form {
+        padding: 18px;
+        border-radius: 6px;
+    }
+
+    .contact-form h3 {
+        font-size: 1.2rem;
+    }
+
+    .form-group label {
+        font-size: 0.95rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+
+    .contact-info h3 {
+        font-size: 1.05rem;
+        gap: 8px;
+    }
+
+    .contact-info p {
+        padding-left: 8px;
+        font-size: 0.9rem;
+    }
+
+    .social-button {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+
+    .social-buttons {
+        gap: 10px;
+    }
+
+    /* Team / Achievements */
+    .team-grid,
+    .achievements-list {
+        grid-template-columns: 1fr;
+    }
+
+    .team-member img {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Merch */
+    .merch-item {
+        width: 100%;
+    }
+
+    .merch-item img {
+        height: 200px;
+    }
+
+    .merch-item h3 {
+        font-size: 1.2rem;
+    }
+
+    .buy-btn {
+        width: 90%;
+        font-size: 0.95rem;
+    }
+
+    /* Contacts grid */
+    .contacts-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .contacts-item img {
+        height: 200px;
+        padding: 12px;
+    }
+
+    /* Donate fixed */
+    .donate-fixed {
+        font-size: 14px;
+        padding: 8px 14px;
+        top: 6px;
+    }
+}
